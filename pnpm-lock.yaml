@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@types/node':
+        specifier: ^20.14.2
+        version: 20.14.2
       puppeteer:
         specifier: ^22.10.0
-        version: 22.10.0
+        version: 22.10.0(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
 packages:
 
@@ -402,6 +408,11 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
+  typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   unbzip2-stream@1.4.3:
     resolution: {integrity: sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg==}
 
@@ -489,7 +500,6 @@ snapshots:
   '@types/node@20.14.2':
     dependencies:
       undici-types: 5.26.5
-    optional: true
 
   '@types/yauzl@2.10.3':
     dependencies:
@@ -587,12 +597,14 @@ snapshots:
 
   color-name@1.1.4: {}
 
-  cosmiconfig@9.0.0:
+  cosmiconfig@9.0.0(typescript@5.4.5):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
+    optionalDependencies:
+      typescript: 5.4.5
 
   data-uri-to-buffer@6.0.2: {}
 
@@ -810,10 +822,10 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@22.10.0:
+  puppeteer@22.10.0(typescript@5.4.5):
     dependencies:
       '@puppeteer/browsers': 2.2.3
-      cosmiconfig: 9.0.0
+      cosmiconfig: 9.0.0(typescript@5.4.5)
       devtools-protocol: 0.0.1286932
       puppeteer-core: 22.10.0
     transitivePeerDependencies:
@@ -896,13 +908,14 @@ snapshots:
 
   tslib@2.6.3: {}
 
+  typescript@5.4.5: {}
+
   unbzip2-stream@1.4.3:
     dependencies:
       buffer: 5.7.1
       through: 2.3.8
 
-  undici-types@5.26.5:
-    optional: true
+  undici-types@5.26.5: {}
 
   universalify@2.0.1: {}
 
