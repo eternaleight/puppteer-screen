@@ -1,4 +1,4 @@
-## puppeteer-screenshot
+## puppeteer-screen
 ![screenshot](https://github.com/eternaleight/puppteer-test/assets/96198088/27ea23c9-847d-4ef6-a53d-8e0d0ea6741e)
 
 ### zsh
