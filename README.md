@@ -3,27 +3,50 @@
 
 ### zsh
 ```
-node index.js
+pnpm tsc
+pnpm node dist/index.js 
 ```
 
-### index.js
-```js
-const puppeteer = require('puppeteer');
+### index.ts
+```ts
+import puppeteer, { Browser, Page } from "puppeteer"
 
-(async () => {
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
+;(async () => {
+  // ブラウザの起動
+  const browser: Browser = await puppeteer.launch({ headless: true })
+  // 新しいページを開く
+  const page: Page = await browser.newPage()
 
   // ビューポートの設定
   await page.setViewport({
     width: 1920,
     height: 1080,
-    deviceScaleFactor: 2, // デバイススケールファクターを2に設定(高解像度)
-  });
+    deviceScaleFactor: 2, // デバイススケールファクターを2に設定
+  })
 
-  await page.goto('https://github.com/eternaleight');
-  await page.screenshot({ path: 'screenshot.png', fullPage: true }); // fullPageオプションで全体のスクリーンショットを取得
+  // 指定したURLに移動
+  await page.goto("https://github.com/eternaleight")
 
-  await browser.close();
-})();
+  // スクリーンショットを撮る
+  await page.screenshot({ path: "screenshot.png", fullPage: true })
+
+  // ブラウザを閉じる
+  await browser.close()
+})()
+```
+
+### tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./"
+  },
+  "include": ["index.ts"],
+  "exclude": ["node_modules"]
+}
 ```
