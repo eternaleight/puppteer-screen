@@ -13,7 +13,7 @@ importers:
         version: 20.14.2
       puppeteer:
         specifier: ^22.10.0
-        version: 22.10.0(typescript@5.4.5)
+        version: 22.10.0(supports-color@5.5.0)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -265,8 +265,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@4.1.0:
-    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+  js-yaml@4.3.2:
+    resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
     hasBin: true
 
   jsbn@1.1.0:
@@ -350,6 +350,7 @@ packages:
   puppeteer@22.10.0:
     resolution: {integrity: sha512-ZOkZd6a6t0BdKcWb0wAYHWQqCfdlN1PPnXOmg/XNrbo6gJhYWFX4qCNb6ahSn8TpAqBqLCoD4Q010F7GwOM7mA==}
     engines: {node: '>=18'}
+    deprecated: < 24.15.0 is no longer supported
     hasBin: true
 
   queue-tick@1.0.1:
@@ -491,12 +492,12 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.0.1
 
-  '@puppeteer/browsers@2.2.3':
+  '@puppeteer/browsers@2.2.3(supports-color@5.5.0)':
     dependencies:
-      debug: 4.3.4
-      extract-zip: 2.0.1
+      debug: 4.3.4(supports-color@5.5.0)
+      extract-zip: 2.0.1(supports-color@5.5.0)
       progress: 2.0.3
-      proxy-agent: 6.4.0
+      proxy-agent: 6.4.0(supports-color@5.5.0)
       semver: 7.6.0
       tar-fs: 3.0.5
       unbzip2-stream: 1.4.3
@@ -515,9 +516,9 @@ snapshots:
       '@types/node': 20.14.2
     optional: true
 
-  agent-base@7.1.1:
+  agent-base@7.1.1(supports-color@5.5.0):
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -610,16 +611,18 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
-      js-yaml: 4.1.0
+      js-yaml: 4.3.2
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.4.5
 
   data-uri-to-buffer@6.0.2: {}
 
-  debug@4.3.4:
+  debug@4.3.4(supports-color@5.5.0):
     dependencies:
       ms: 2.1.2
+    optionalDependencies:
+      supports-color: 5.5.0
 
   degenerator@5.0.1:
     dependencies:
@@ -659,9 +662,9 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  extract-zip@2.0.1:
+  extract-zip@2.0.1(supports-color@5.5.0):
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -687,11 +690,11 @@ snapshots:
     dependencies:
       pump: 3.0.0
 
-  get-uri@6.0.3:
+  get-uri@6.0.3(supports-color@5.5.0):
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       fs-extra: 11.2.0
     transitivePeerDependencies:
       - supports-color
@@ -700,17 +703,17 @@ snapshots:
 
   has-flag@3.0.0: {}
 
-  http-proxy-agent@7.0.2:
+  http-proxy-agent@7.0.2(supports-color@5.5.0):
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.4
+      agent-base: 7.1.1(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.4:
+  https-proxy-agent@7.0.4(supports-color@5.5.0):
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.4
+      agent-base: 7.1.1(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -732,7 +735,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@4.1.0:
+  js-yaml@4.3.2:
     dependencies:
       argparse: 2.0.1
 
@@ -764,16 +767,16 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  pac-proxy-agent@7.0.1:
+  pac-proxy-agent@7.0.1(supports-color@5.5.0):
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
-      agent-base: 7.1.1
-      debug: 4.3.4
-      get-uri: 6.0.3
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.4
+      agent-base: 7.1.1(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@5.5.0)
+      get-uri: 6.0.3(supports-color@5.5.0)
+      http-proxy-agent: 7.0.2(supports-color@5.5.0)
+      https-proxy-agent: 7.0.4(supports-color@5.5.0)
       pac-resolver: 7.0.1
-      socks-proxy-agent: 8.0.3
+      socks-proxy-agent: 8.0.3(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -801,16 +804,16 @@ snapshots:
 
   progress@2.0.3: {}
 
-  proxy-agent@6.4.0:
+  proxy-agent@6.4.0(supports-color@5.5.0):
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.4
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.4
+      agent-base: 7.1.1(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@5.5.0)
+      http-proxy-agent: 7.0.2(supports-color@5.5.0)
+      https-proxy-agent: 7.0.4(supports-color@5.5.0)
       lru-cache: 7.18.3
-      pac-proxy-agent: 7.0.1
+      pac-proxy-agent: 7.0.1(supports-color@5.5.0)
       proxy-from-env: 1.1.0
-      socks-proxy-agent: 8.0.3
+      socks-proxy-agent: 8.0.3(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -821,11 +824,11 @@ snapshots:
       end-of-stream: 1.4.4
       once: 1.4.0
 
-  puppeteer-core@22.10.0:
+  puppeteer-core@22.10.0(supports-color@5.5.0):
     dependencies:
-      '@puppeteer/browsers': 2.2.3
+      '@puppeteer/browsers': 2.2.3(supports-color@5.5.0)
       chromium-bidi: 0.5.19(devtools-protocol@0.0.1286932)
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@5.5.0)
       devtools-protocol: 0.0.1286932
       ws: 8.17.0
     transitivePeerDependencies:
@@ -833,12 +836,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@22.10.0(typescript@5.4.5):
+  puppeteer@22.10.0(supports-color@5.5.0)(typescript@5.4.5):
     dependencies:
-      '@puppeteer/browsers': 2.2.3
+      '@puppeteer/browsers': 2.2.3(supports-color@5.5.0)
       cosmiconfig: 9.0.0(typescript@5.4.5)
       devtools-protocol: 0.0.1286932
-      puppeteer-core: 22.10.0
+      puppeteer-core: 22.10.0(supports-color@5.5.0)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -857,10 +860,10 @@ snapshots:
 
   smart-buffer@4.2.0: {}
 
-  socks-proxy-agent@8.0.3:
+  socks-proxy-agent@8.0.3(supports-color@5.5.0):
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.4
+      agent-base: 7.1.1(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@5.5.0)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
